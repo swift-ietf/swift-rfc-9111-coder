@@ -1,7 +1,7 @@
 import Byte
-import Byte_Standard_Library_Integration
+import Byte
 import Coder
-import Cursor_Standard_Library_Integration
+import Cursor
 import RFC_5322
 import RFC_9110
 import RFC_9111
