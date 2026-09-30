@@ -55,4 +55,3 @@ extension RFC_9110.Cache.Age {
     }
 }
 
-extension RFC_9110.Cache.Age: Coder.Codable {}

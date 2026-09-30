@@ -61,4 +61,3 @@ extension RFC_9110.Cache.Expires {
     }
 }
 
-extension RFC_9110.Cache.Expires: Coder.Codable {}
