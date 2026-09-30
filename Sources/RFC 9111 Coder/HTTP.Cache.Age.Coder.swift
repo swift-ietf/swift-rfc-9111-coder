@@ -30,11 +30,7 @@ extension RFC_9110.Cache.Age {
 
             let text = Scanning.text(digits)
 
-            guard let seconds = Int(text) else {
-                throw .overflow(text)
-            }
-
-            return RFC_9110.Cache.Age(seconds: seconds)
+            return RFC_9110.Cache.Age(seconds: Int(text) ?? 2_147_483_648)
         }
 
         public borrowing func serialize(

@@ -50,19 +50,19 @@ extension RFC_9110.Cache.Control {
         for (name, value) in directives {
             switch name.lowercased() {
             case "max-age":
-                if let value, let seconds = Int(value) {
+                if let value, let seconds = Self.deltaSeconds(value) {
                     self.maxAge = seconds
                 }
 
             case "max-stale":
-                if let value, let seconds = Int(value) {
+                if let value, let seconds = Self.deltaSeconds(value) {
                     self.maxStale = .some(.some(seconds))
                 } else {
                     self.maxStale = .some(nil)
                 }
 
             case "min-fresh":
-                if let value, let seconds = Int(value) {
+                if let value, let seconds = Self.deltaSeconds(value) {
                     self.minFresh = seconds
                 }
 
@@ -102,7 +102,7 @@ extension RFC_9110.Cache.Control {
                 self.isPublic = true
 
             case "s-maxage":
-                if let value, let seconds = Int(value) {
+                if let value, let seconds = Self.deltaSeconds(value) {
                     self.sMaxage = seconds
                 }
 
@@ -110,12 +110,12 @@ extension RFC_9110.Cache.Control {
                 self.immutable = true
 
             case "stale-while-revalidate":
-                if let value, let seconds = Int(value) {
+                if let value, let seconds = Self.deltaSeconds(value) {
                     self.staleWhileRevalidate = seconds
                 }
 
             case "stale-if-error":
-                if let value, let seconds = Int(value) {
+                if let value, let seconds = Self.deltaSeconds(value) {
                     self.staleIfError = seconds
                 }
 
@@ -201,5 +201,13 @@ extension RFC_9110.Cache.Control {
         }
 
         return directives
+    }
+}
+
+extension RFC_9110.Cache.Control {
+
+    fileprivate static func deltaSeconds(_ value: String) -> Int? {
+        guard !value.isEmpty, value.utf8.allSatisfy({ (0x30...0x39).contains($0) }) else { return nil }
+        return Int(value) ?? 2_147_483_648
     }
 }
