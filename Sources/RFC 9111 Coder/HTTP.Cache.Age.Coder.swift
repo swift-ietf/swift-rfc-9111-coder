@@ -1,5 +1,4 @@
 public import Byte
-import Byte
 public import Coder
 public import Cursor
 public import Cursor
@@ -44,7 +43,7 @@ extension RFC_9110.Cache.Age {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 
-    public enum Error: Swift.Error, Equatable {
+    public enum Error: Swift::Error, Equatable {
 
         case empty
 

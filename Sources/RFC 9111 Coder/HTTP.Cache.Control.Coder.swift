@@ -1,5 +1,4 @@
 public import Byte
-import Byte
 public import Coder
 public import Cursor
 public import Cursor
