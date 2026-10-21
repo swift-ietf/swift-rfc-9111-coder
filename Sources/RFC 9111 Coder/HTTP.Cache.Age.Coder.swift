@@ -1,10 +1,9 @@
 public import Byte
 public import Coder
 public import Cursor
-public import Cursor
+import Parser
 public import RFC_9110
 public import RFC_9111
-import Parser
 import Serializer
 
 extension RFC_9110.Cache.Age {
@@ -13,7 +12,6 @@ extension RFC_9110.Cache.Age {
         Input: Cursor.`Protocol`<Byte, Never>,
         Buffer: RangeReplaceableCollection<Byte>
     >: Coding {
-
 
         public typealias Output = RFC_9110.Cache.Age
 
@@ -50,4 +48,3 @@ extension RFC_9110.Cache.Age {
         case overflow(String)
     }
 }
-

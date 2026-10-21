@@ -1,11 +1,10 @@
 public import Byte
 public import Coder
 public import Cursor
-public import Cursor
+import Parser
 public import RFC_9110
 import RFC_9110_Coder
 public import RFC_9111
-import Parser
 import Serializer
 
 extension RFC_9110.Cache.Control {
@@ -14,7 +13,6 @@ extension RFC_9110.Cache.Control {
         Input: Cursor.`Protocol`<Byte, Never>,
         Buffer: RangeReplaceableCollection<Byte>
     >: Coding {
-
 
         public typealias Output = RFC_9110.Cache.Control
 
@@ -40,7 +38,6 @@ extension RFC_9110.Cache.Control {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
 
 extension RFC_9110.Cache.Control {
 

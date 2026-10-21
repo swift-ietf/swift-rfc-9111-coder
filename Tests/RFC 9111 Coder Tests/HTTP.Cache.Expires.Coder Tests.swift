@@ -1,5 +1,4 @@
 import Byte
-import Byte
 import Coder
 import Cursor
 import RFC_5322

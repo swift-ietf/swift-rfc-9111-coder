@@ -1,12 +1,11 @@
 public import Byte
 public import Coder
 public import Cursor
-public import Cursor
+import Parser
 import RFC_5322
 public import RFC_9110
 import RFC_9110_Coder
 public import RFC_9111
-import Parser
 import Serializer
 
 extension RFC_9110.Cache.Expires {
@@ -15,7 +14,6 @@ extension RFC_9110.Cache.Expires {
         Input: Cursor.`Protocol`<Byte, Never>,
         Buffer: RangeReplaceableCollection<Byte>
     >: Coding {
-
 
         public typealias Output = RFC_9110.Cache.Expires
 
@@ -60,4 +58,3 @@ extension RFC_9110.Cache.Expires {
         case invalidDate(String)
     }
 }
-

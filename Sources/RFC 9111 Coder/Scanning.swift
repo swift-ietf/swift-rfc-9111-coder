@@ -1,5 +1,4 @@
 import Byte
-import Byte
 import Cursor
 
 enum Scanning {
