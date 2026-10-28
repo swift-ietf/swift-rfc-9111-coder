@@ -41,9 +41,7 @@ let package = Package(
             name: "RFC 9111 Coder",
             dependencies: [
                 .product(name: "Byte", package: "swift-byte"),
-                .product(name: "Byte", package: "swift-byte"),
                 .product(name: "Coder", package: "swift-coder"),
-                .product(name: "Cursor", package: "swift-cursor"),
                 .product(name: "Cursor", package: "swift-cursor"),
                 .product(name: "Parser", package: "swift-parser"),
                 .product(name: "RFC 5322", package: "swift-rfc-5322"),
@@ -57,7 +55,6 @@ let package = Package(
             name: "RFC 9111 Coder Tests",
             dependencies: [
                 .target(name: "RFC 9111 Coder"),
-                .product(name: "Byte", package: "swift-byte"),
                 .product(name: "Byte", package: "swift-byte"),
                 .product(name: "Coder", package: "swift-coder"),
                 .product(name: "Cursor", package: "swift-cursor"),
